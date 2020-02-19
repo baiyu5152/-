@@ -1,0 +1,16 @@
+directories:
+  output: release
+  buildResources: build
+  app: ./
+publish:
+  - provider: generic
+    url: 'http://localhost:8899/'
+win:
+  target:
+    - nsis
+    - zip
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: true
+electronVersion: 8.0.1
