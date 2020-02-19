@@ -1,11 +1,11 @@
 const{app,BrowserWindow,ipcMain,dialog} = require('electron')
 //自动更新
-// const autoUpdater = require("electron-updater").autoUpdater
-// autoUpdater.setFeedURL('http://localhost:8899/')//设置检测更新地址（参数为 软件所在位置）
-// autoUpdater.checkForUpdates() //检测是否有新版本,如果有新版本则自动下载；
-// autoUpdater.on('update-downloaded', function () { //下载完成后执行 quitAndInstall
-//     autoUpdater.quitAndInstall();  //关闭软件并安装新版本
-// })
+const autoUpdater = require("electron-updater").autoUpdater
+autoUpdater.setFeedURL('http://localhost:8899/')//设置检测更新地址（参数为 软件所在位置）
+autoUpdater.checkForUpdates() //检测是否有新版本,如果有新版本则自动下载；
+autoUpdater.on('update-downloaded', function () { //下载完成后执行 quitAndInstall
+    autoUpdater.quitAndInstall();  //关闭软件并安装新版本
+})
 
 const DataStroe = require('./common/MusicDataStore')
 const myStroe = new DataStroe({'name':'Music Data'})
